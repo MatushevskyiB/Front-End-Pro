@@ -1,0 +1,113 @@
+ <!--  <p class="Arial-BoldItalicMT_Regular">check font Arial-BoldItalicMT_Regular</p>
+    <p class="ArialMT_Regular">check font ArialMT_Regular</p>
+    <p class="Arial-BoldMT_Regular">check font Arial-BoldMT_Regular</p>
+    <p class="Lato-Black">check font Lato-Black</p>
+    <p class="Lato_Regular">check font Lato_Regular</p>
+    <p class="Lato_Blod">check font Lato_Blod</p> -->
+
+
+
+/* .Arial-BoldItalicMT_Regular {
+    font-family: 'ArialMT-BoldItalic';
+}
+.ArialMT_Regular {
+    font-family: 'ArialMT';
+}
+.Arial-BoldMT_Regular {
+    font-family: 'ArialMT-Bold';
+}
+.Lato-Black {
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+}
+.Lato_Regular {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+}
+.Lato_Blod {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+} */
+
+
+1. Стрілки на картинки всюди замінив.
+2. Меню відредагував, там і справді основні пункти були нижчі ніж у макеті, а також надто близько одне до одного (теж виправив).
+3. Блок clients пофіксив але там іноді з'являється (без видимих причин іноді все гаразд, а іноді - ні) якийсь баг із border-ом (прикріпив скрін).
+4. Кнопці download додав градієнт (тінь під кнопкою на макеті помітив, а градієнт завтикав))).
+5. Блок із download  також пофіксив (якийсь геть тупий косяк, не знаю як пропустив).
+6. З висотою ul у меню розібрався (невірно почистив float), але float для li-шок залишив бо якщо його задати для всього nav то меню розпадається. Але якщо це критично, скажіть, я виправлю.
+7. Логотип зробив одним посиланням (замість div-а і двох посилань).
+9. Два нижніх хедера замінив на section: я щось думав, що важливо щоб заголовок був першим саме в коді але виявляється все ок якщо він просто перший по контенту).
+
+=================================================================JS============================================================
+--------------------------------------------------вАРІАНТ №1.1 (пролистування слайдера)-------------------------------
+
+/* document.querySelector(".slider__button_before").addEventListener("click", function () {
+    //let left = 150;
+    document.querySelector(".slider__container").style.transform = "translateX(0px)"
+    //document.querySelector(".slider__container").style.transition = "transform 500ms ease 0s";
+})
+
+document.querySelector(".slider__button_after").addEventListener("click", function () {
+    let right = 150;
+    right+=150
+    document.querySelector(".slider__container").style.transform = `translateX(-${right}px)`
+})
+ */
+
+
+--------------------------------------------------вАРІАНТ №1.2--------------------------------------------------------
+
+/* document.querySelector(".slider__button_before").onclick = function () {
+    document.querySelector(".slider__container").style.transform = "translateX(75px)";
+}
+
+document.querySelector(".slider__button_after").onclick = function () {
+    document.querySelector(".slider__container").style.transform = "translateX(-75px)";
+} */
+
+--------------------------------------------------вАРІАНТ №1.3--------------------------------------------------------
+Сделать минимум 2-3 дополнительных задания на выбор. Звездочка обозначает сложность задания.
+
+
+(*) Вместо fadeIn/Out сделать анимацию slideIn/slideOut
+
+(*) Реализовать возможность автоматической смены слайдов по таймауту. Учесть что таймер нужно обнулять после пользовательского выбора слайда.
+
+(*) Несколько слайдеров на странице должны работать вместе корректно.
+
+(*) Организовать слайдер как функцию, которая принимает html элемент слайдера и список параметров (показывать ли стрелки, пагинацию, ...).
+
+(**) По клику на слайд должна открываться модалка с содержимым слайда.
+
+(**) Реализовать возможно бесконечной смены слайдов (если мы дошли до конца слайдера следующий клик на правую стрелочку покажет первый слайд) и тоже самое если нажимаем на левую стрелку когда находимся на первом элементе должны прыгнуть в конец слайдера.
+/* function makeTranslateValue(elemArr) {
+    elemArr.forEach(function(el) {
+        let moveValue = 0;
+        el.addEventListener("click", function (event) {
+            if (event.target.classList.contains("slider__button_before")) {
+                moveValue+=150;
+                console.log("moveValue = " + moveValue);
+                return moveValue
+            }
+            else {
+                moveValue-=150;
+                console.log("moveValue = " + moveValue);
+                return moveValue
+            }
+        })
+    }) 
+}
+
+sliderButtons.forEach(function(el) {
+    el.addEventListener("click", function (event) {
+        if (event.target.classList.contains("slider__button_before")) {
+            console.log("назад translateValue = " + makeTranslateValue(sliderButtons));
+            document.querySelector(".slider__container").style.transform = `translateX(${makeTranslateValue(sliderButtons)}px)`;
+        }
+        else {
+            console.log("вперед translateValue = " + makeTranslateValue(sliderButtons));
+            document.querySelector(".slider__container").style.transform = `translateX(${makeTranslateValue(sliderButtons)}px)`;
+        }
+    })
+})  */

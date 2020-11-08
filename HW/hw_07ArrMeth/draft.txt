@@ -1,0 +1,59 @@
+/* function User (name, age, kindOfActivity, gender) {
+    this.name = name,
+    this.age = age,
+    this.kindOfActivity :  = kindOfActivity,
+    this.gender = gender
+} */
+
+3. /*const usersNeville = users.filter(function (user, index) {
+    if (user.name === "Neville" && user.age === 40) {
+        return user + (user.index = index)
+    }
+}) */
+
+
+4.1 
+/* let showNames = function (obj) {
+    for (let j = 0; j < obj.length; j++) {
+        const element = obj[j];
+        if (element === name) {
+            return element
+        }
+    }
+}
+
+function doLikeMap (arr, callback) {
+    for (let index = 0; index < arr.length; index++) {
+        const user = arr[index];
+        resulrArr = []
+        resulrArr.push(callback (user))
+    }
+    return resulrArr
+}
+console.log ("doLikeMap")
+console.table(doLikeMap (users, showNames)); */
+
+/* newArr = []
+for (let i = 0; i < users.length; i++) {
+    const user = users[i];
+    newArr.push(user.name)
+} */
+
+4.2
+function doLikeFilter (arr, callback) {
+    newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        const element = arr[i];
+        newArr.push(callback(element));
+    }
+    return newArr
+}
+
+4.2
+/* filteredArr = [];
+for (let i = 0; i < users.length; i++) {
+    const element = users[i];
+    if (element.gender === "male") {
+        filteredArr.push (element);
+    }
+} */

@@ -1,0 +1,54 @@
+                                                                 //Документ
+
+function Product ({name, price, amount}) {
+    this.name = name,
+    this.price = price,
+    this.amount = amount
+}
+//productList = document.createElement('ul');
+productList = [
+    new Product ({name : "phone", price : "300$", amount : 50}),
+    new Product ({name : "headphones", price : "50$", amount : 60}),
+    new Product ({name : "charger", price : "10$", amount : 80}),
+    new Product ({name : "case", price : "5$", amount : 80}),
+];
+//console.table(productList);
+//productList.className = "productList";
+document.body.append(productList);
+--------------------------------------------------------------------
+let result = someArr.reduce (function (accum, item) {
+        accum[item] = (someArr.filter (el => el === item)).length;
+        //console.log (accum);
+        //console.log ("item" + item); 
+        return accum
+}, {})
+
+console.log ("\nОб'єкт:")
+console.log (result);
+
+                                                       Тренування
+
+let title = document.querySelector(".main_title");
+//console.log(title);
+
+title.insertAdjacentHTML("afterend", "<p>Test</p>");
+
+title.nextSibling.classList.add('text');
+let text = document.querySelector(".text");
+//console.log(text);
+
+text.style.cssText = `
+color: green;
+font-size: 20px;
+font-weight: 700;
+`
+                                                     Конструктор
+/* function Product ({name, price, amount}) {
+    this.name = name,
+    this.price = price,
+    this.amount = amount
+} */
+
+for (let i = 0; (document.querySelectorAll(".li:nth-child(6n)")).length; i++) {//querySelectorAll - повертає масив тому для застосування змін до його елементів потрібен цикл
+    (document.querySelectorAll(".li:nth-child(6n)"))[i].style.backgroundColor = "gray";
+}//оскільки треба було змінити background-сolor кожному 2-ому товару (я так зрозумів йшлося про назву) я скористався псевдокласом :nth-child(6n)

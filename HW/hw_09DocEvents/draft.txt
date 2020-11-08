@@ -1,0 +1,111 @@
+function generateList(simArray) {
+    let ul = document.querySelector(".body").insertAdjacentHTML("beforeend", `<ul class="menu"></ul>`);
+    simArray.forEach(function(elem) {
+        if (Array.isArray(elem)) {
+            document.querySelector(".menu").insertAdjacentHTML("beforeend", `<ul class="menu"></ul>`);
+            generateList(elem)
+        }
+        else {
+        document.querySelector(".menu").insertAdjacentHTML("beforeend", `<li class="li">${elem}</li>`);
+        }
+    });
+}
+
+generateList (complexArr);
+
+
+function generateList(simArray) {
+    document.querySelector(".body").insertAdjacentHTML("beforeend", `<ul class="menu"></ul>`);
+};
+
+function doRec (simArray) {
+    simArray.forEach(function(elem) {
+        if (Array.isArray(elem)) {
+            document.querySelector(".menu:last-child").insertAdjacentHTML("beforeend", `<ul class="menu"></ul>`);
+            doRec(elem)
+        }
+        else {
+        document.querySelector(".menu:nth-of-type").insertAdjacentHTML("beforeend", `<li class="li">${elem}</li>`);
+        }
+    })
+};
+
+
+-------------------------------------------------------Вирізане
+
+//let li = document.createElement('li'); 
+//li.innerHTML = simpleArr;
+/* complexArr.forEach(function (el) {
+    li = document.createElement('li');    
+    if (Array.isArray(el)) {
+        li.append("масив")
+    }
+    else {
+        
+    }
+}) */
+//document.body.append(li);
+/* let ul = document.createElement('ul');
+let li = document.createElement('li');
+let number = 180;
+
+li.innerHTML  = number;
+document.body.append(li);
+li.append("50"); */
+
+/* function generateList(somArr) {
+    let ul = document.createElement('ul');
+    let list = new DocumentFragment();
+    somArr.forEach(function (el) {
+        let li = document.createElement('li');
+        if (Array.isArray(el)) {
+            li.append(generateList(el))
+            list.append(li);
+        }
+        else {
+            li.innerHTML  = el;
+            list.append(li);
+        }
+    })
+    ul.append(list);
+} */
+
+/* const compList = generateList (simpleArr);
+document.body.append(compList); */
+
+/* let ul = document.createElement('ul');
+ul.className = "menu";
+let list = new DocumentFragment();
+complexArr.forEach(function (el) {
+    let li = document.createElement('li');
+    if (Array.isArray(el)) {
+        li.append("масив")
+        list.append(li);
+    }
+    else {
+        li.innerHTML  = el;
+        list.append(li);
+    }
+})
+ul.append(list);
+document.body.append(ul); */
+
+----------------------------------------DocumentFragment()
+function generateList(somArr) {
+    let ul = document.createElement('ul');
+    let li = document.createElement('li');
+    //let list = new DocumentFragment();
+    somArr.forEach(function (el) {
+        let li = document.createElement('li');
+        if (Array.isArray(el)) {
+            li.append(generateList(el));
+            //list.append(li);
+        }
+        else {
+            li.append(el);
+            //list.append(li);
+            ul.append(li);
+        }
+    })
+    document.body.append(ul);
+}

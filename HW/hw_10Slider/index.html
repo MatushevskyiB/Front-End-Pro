@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home work №10</title>
+    <link rel="stylesheet" href="normalise_css.css">
+    <link rel="stylesheet" href="reset_css.css"><link href="https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap&subset=latin-ext" rel="stylesheet">
+    <style>
+        .body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgb(66, 64, 64);
+        }
+
+        .title {
+            color: rgb(122, 122, 233);
+            text-align: center;
+            padding-bottom: 40px;
+        }
+
+        .botton-container {
+            position: relative;
+        }
+        .slider__button {
+            font-size: 24px;
+            font-weight: 900;
+            color: rgb(245, 163, 11);
+            background-color:  black;;
+            border-radius: 10px;
+            border: none;
+            height: 172px;
+        }
+        .slider__button:active {
+            background-color: black;
+            border: blueviolet 2px solid;
+        }
+        .slider__button_before {
+            position: absolute;
+            top: 0px;
+            left: -42px;
+            transform: translateX(0px);
+        }
+        .slider__button_after {
+            position: absolute;
+            top: 0px;
+            left: 500px;
+        }
+
+        .slider {
+            position: relative;
+            width: 482px;
+            height: 164px;
+            border: blueviolet 4px solid;
+            border-radius: 10px;
+            background-color: black;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+        .slider__container {
+            position: absolute;
+            top: 2px;
+            left: 0px;
+            display: flex;
+            align-items: center;
+            height: 164px;
+            transition: transform 500ms ease 0s;
+        }
+        .slider__pic {
+            border-radius: 10px;
+            border: rgb(245, 163, 11) 2px solid;
+            margin-right: 10px;
+        }
+
+        .slider__pages {
+            display: flex;
+            justify-content: space-between;
+        }
+        .slider__page {
+            height: 14px;
+            width: 14px;
+            border-radius: 50%;
+            background-color: rgb(177, 165, 189);
+            margin-right: 7px;
+            border: none;
+        }
+        .slider__page:last-child {
+            margin-right: 0px;
+        }
+        .slider__page_focus {
+            background-color: rgb(55, 8, 99);
+        }
+        .modal-window {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background-color: rgba(0, 0, 0, 0.452);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body class="body">
+    <h1 class="title">Home work №10</h1>
+    <div class="botton-container">
+        <div class="slider">
+                <div class="slider__slide">
+                    <img src="https://via.placeholder.com/150/f3c632/808080?text=1" alt="" class="slider__pic">
+                </div>
+                <div class="slider__slide">
+                    <img src="https://via.placeholder.com/150/bafc03/808080?text=2" alt="" class="slider__pic">
+                </div>
+                <div class="slider__slide">
+                    <img src="https://via.placeholder.com/150/03c6fc/808080?text=3" alt="" class="slider__pic">
+                </div>
+                <div class="slider__slide">
+                    <img src="https://via.placeholder.com/150/fc037b/808080?text=4" alt="" class="slider__pic">
+                </div>
+                <div class="slider__slide">
+                    <img src="https://via.placeholder.com/150/fc4a03/808080?text=5" alt="" class="slider__pic">
+                </div>
+                <div class="slider__slide">
+                    <img src="https://via.placeholder.com/150/fceb03/808080?text=6" alt="" class="slider__pic">
+                </div>
+                <div class="slider__slide">
+                    <img src="https://via.placeholder.com/150/b103fc/808080?text=7" alt="" class="slider__pic">
+                </div><!-- 
+                <div class="slider__slide">
+                    <img src="https://via.placeholder.com/150/f6f7a8/808080?text=8" alt="" class="slider__pic">
+                </div> --><!-- 
+                <div class="slider__slide">
+                    <img src="https://via.placeholder.com/150/038003/808080?text=9" alt="" class="slider__pic">
+                </div> --><!-- 
+                <div class="slider__slide">
+                    <img src="https://via.placeholder.com/150/ffffff/808080?text=10" alt="" class="slider__pic">
+                </div> -->
+        </div>
+    </div>
+
+    <script defer src="main.js"></script>
+</body>
+</html>

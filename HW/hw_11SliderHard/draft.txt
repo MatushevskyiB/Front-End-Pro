@@ -1,0 +1,39 @@
+
+        //----------------------Таймер (в кліках)
+        /* let translateTimer;
+        clearTimeout(translateTimer);
+        translateTimer = setTimeout(function moveSlide () {
+            if (translateValue === -(maxTranslateValue)) {
+            translateValue = 0
+            }
+            else {
+            translateValue -= slidWidth * 3;
+            }
+            document.querySelector(".slider__container").style.transform = `translateX(${translateValue}px)`;
+            translateTimer = setTimeout(moveSlide, 2000)
+        }, 2000); */
+
+
+//----------------------Таймер
+
+let sliderContainerWidth = document.querySelector(".slider__container").offsetWidth;
+let slidWidth = document.querySelector(".slider__slide").offsetWidth;//ширина слайда
+let maxTranslateValue = (slidWidth * 3) * (Math.ceil(sliderContainerWidth / (slidWidth * 3)) - 1);
+//setInterval(() => console.log("sliderContainerWidth = " + sliderContainerWidth + "; slidWidth = " + slidWidth + "; maxTranslateValue = " + maxTranslateValue), 500)
+
+
+console.log("sliderContainerWidth = " + sliderContainerWidth + "; slidWidth = " + slidWidth + "; maxTranslateValue = " + maxTranslateValue);
+console.log("slider = " + document.querySelector(".slider").offsetWidth);
+console.log("title = " + document.querySelector(".title").offsetWidth);
+
+
+let translateTimer;
+/* translateTimer = setInterval(() => {
+    if (translateValue === -(maxTranslateValue)) {
+    translateValue = 0
+    }
+    else {
+    translateValue -= slidWidth * 3;
+    }
+    document.querySelector(".slider__container").style.transform = `translateX(${translateValue}px)`;
+}) */

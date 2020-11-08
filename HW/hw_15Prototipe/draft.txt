@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home work №15</title>
+    <style>
+        * {
+            margin: 0px;
+        }
+        .main_title {/*                      style of title */
+            color: white;
+            text-align: center;
+            background-image: url(https://media-exp1.licdn.com/dms/image/C4D1BAQEOxpPzwAFP0Q/company-background_10000/0?e=2159024400&v=beta&t=E2mvPECFIQRxU2rEUNEe8Wto3QdSasTesToTIT8ZBRU);
+            background-size: cover;
+            background-position: center;
+            padding-top: 20px;
+            padding-bottom: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="main_title">Home work №15</h1>
+
+    <script defer src="main.js"></script>
+</body>
+</html>
+
+
+"use strict"
+
+/* Задача
+
+создать 3 объкта (objA, objB, objC) Придумать как минимум 1 свойство и 1 метод каждому объекту.
+
+Прототипом objC дожен быть objB, а прототипом objB должен быть objA.
+
+
+    1. Реализовать цепочку протитопов с помощью Object.create.
+    2. Реализовать цепочку протитопов с помощью непосредственного изменения прототипа (__proto__, setPrototypeOf)
+    3. Реализовать цепочку протитопов с помощью функций конструкторов.
+
+
+ */
+
+let objA = {
+    color: "blue",
+    motion () {
+        console.log(`${this.objA} is moving`);
+    }
+};
+
+let objB = Object.create(objA);
+objB = {
+    height: "5 m.",
+    transported () {
+        console.log(`The ${this.objB} is transported`);
+    }
+};
+
+let objC = Object.create(objB);
+objC = {
+    weight: "48 kg.",
+    location () {
+        console.log(`${this.objC} in stock`);
+    }
+};
+
+console.log(objC.height);
