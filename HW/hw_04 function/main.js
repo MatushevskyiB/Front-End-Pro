@@ -10,9 +10,9 @@ let array2d = [
 function showSumPositElem2dArr(arr2d) {
     let sumPositNumbers = 0;
 
-    for (i = 0; i < arr2d.length; i++) {
+    for (let i = 0; i < arr2d.length; i++) {
         let elements = arr2d[i];
-        for (j = 0; j < elements.length; j++) {
+        for (let j = 0; j < elements.length; j++) {
             let element = elements[j];
             if (element > 0) {
                 sumPositNumbers += element;
@@ -25,9 +25,9 @@ function showSumPositElem2dArr(arr2d) {
 function shownumbersPositElem2dArr(arr2d) {
     let positNumbers = 0;
 
-    for (i = 0; i < arr2d.length; i++) {
+    for (let i = 0; i < arr2d.length; i++) {
         let elements = arr2d[i];
-        for (j = 0; j < elements.length; j++) {
+        for (let j = 0; j < elements.length; j++) {
             let element = elements[j];
             if (element > 0) {
                 positNumbers++;
@@ -56,9 +56,9 @@ console.log(`
 function showMinElem2dArr(arr2d) {
     let minElementArr = arr2d[0][0];// змінна у яку перезаписуватимуться найменші значення
 
-    for (i = 0; i < arr2d.length; i++) {
+    for (let i = 0; i < arr2d.length; i++) {
         let elements = arr2d[i];
-        for (j = 0; j < elements.length; j++) {
+        for (let j = 0; j < elements.length; j++) {
             let element = elements[j];
             if (minElementArr > element) {
                 minElementArr = element;
@@ -70,16 +70,15 @@ function showMinElem2dArr(arr2d) {
 
 function showSerialNumElem2dArr(arr2d, elem) {
 
-    genCycle: for (i = 0; i < arr2d.length; i++) {
+    for (let i = 0; i < arr2d.length; i++) {
         let elements = arr2d[i];
-        for (j = 0; j < elements.length; j++) {
+        for (let j = 0; j < elements.length; j++) {
             let element = elements[j];
             if (element === elem) {
-                break genCycle;
+                return `[${i}][${j}]`
             }
         }
     }
-    return `[${i}][${j}]`//вибачте, що з текстом: не придумав як можна коректно вивести індекс елементу 2д масиву
 }
 
 console.log(`
@@ -101,9 +100,9 @@ console.log(`
 function showMaxElem2dArr(arr2d) {
     let maxElementArr = arr2d[0][0];// змінна у яку перезаписуватимуться найбільші значення
 
-    for (i = 0; i < arr2d.length; i++) {
+    for (let i = 0; i < arr2d.length; i++) {
         let elements = arr2d[i];
-        for (j = 0; j < elements.length; j++) {
+        for (let j = 0; j < elements.length; j++) {
             let element = elements[j];
             if (maxElementArr < element) {
                 maxElementArr = element;
@@ -115,16 +114,15 @@ function showMaxElem2dArr(arr2d) {
 
 function showSerialNumElem2dArr(arr2d, elem) {
 
-    genCycle: for (i = 0; i < arr2d.length; i++) {
+    for (let i = 0; i < arr2d.length; i++) {
         let elements = arr2d[i];
-        for (j = 0; j < elements.length; j++) {
+        for (let j = 0; j < elements.length; j++) {
             let element = elements[j];
             if (element === elem) {
-                break genCycle;
+                return `[${i}][${j}]`
             }
         }
     }
-    return `[${i}][${j}]`
 }
 
 console.log(`
@@ -146,9 +144,9 @@ console.log(`
 function showNumbersNegatElem2dArr(arr2d) {
     let negatNumbers = 0;//змінна куди записуватимуться від'ємні значення
 
-    for (i = 0; i < arr2d.length; i++) {
+    for (let i = 0; i < arr2d.length; i++) {
         let elements = arr2d[i];
-        for (j = 0; j < elements.length; j++) {
+        for (let j = 0; j < elements.length; j++) {
             let element = elements[j];
             if (element < 0) {
                 negatNumbers++;
@@ -176,9 +174,9 @@ console.log(`
 function showNumbersOddPosElem2dArr(arr2d) {
     let oddPositNumbers = 0;// змінна для непарних додатних елементів
 
-    for (i = 0; i < arr2d.length; i++) {
+    for (let i = 0; i < arr2d.length; i++) {
         let elements = arr2d[i];
-        for (j = 0; j < elements.length; j++) {
+        for (let j = 0; j < elements.length; j++) {
             let element = elements[j];
             if ((element > 0) && (element % 2 == 1)) {
                 oddPositNumbers++;
@@ -206,9 +204,9 @@ console.log(`
 function showNumbersEvenPosElem2dArr(arr2d) {
     let evenPositNumbers = 0;// змінна для парних додатних елементів
 
-    for (i = 0; i < arr2d.length; i++) {
+    for (let i = 0; i < arr2d.length; i++) {
         let elements = arr2d[i];
-        for (j = 0; j < elements.length; j++) {
+        for (let j = 0; j < elements.length; j++) {
             let element = elements[j];
             if ((element > 0) && (element % 2 == 0)) {
                 evenPositNumbers++;
@@ -236,19 +234,19 @@ console.log(`
 function multiplicationPosElem2dArr(arr2d, positNumbersArr2d) {//додав ще один параметр для перевірки наявності додатних елементів
     let productPositNumbers = 1;//змінна у якій зберігатиметься добуток додатних елементів
 
-    genCycle: for (i = 0; i < arr2d.length; i++) {
+    for (let i = 0; i < arr2d.length; i++) {
         let elements = arr2d[i];
-        for (j = 0; j < elements.length; j++) {
+        for (let j = 0; j < elements.length; j++) {
             let element = elements[j];
             if (positNumbersArr2d == 0) {//перевірка на випадок відсутності додатних елементів
                 productPositNumbers = 0;
-                break genCycle;
+                return productPositNumbers;
             } else if (element > 0) {
                 productPositNumbers *= element;
             }
         }
     }
-    return productPositNumbers
+    return productPositNumbers;
 }
 
 console.log(`
