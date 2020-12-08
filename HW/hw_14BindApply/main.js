@@ -21,22 +21,33 @@ let bindedF = bind(f, {});
 bindedF(); */
 
 //Apply:
-function apply(func, obj, arr) {
-    arr.forEach(function(el) {
-        func.call(obj, el);
-    });
+function apply(func, obj, pseudoArr) {
+    let arr = Array.from(pseudoArr);
+    for(let i; i < arr.length; i++) {
+        let (val+i) = arr[i];
+        return (val+i)
+    }
+    func.call(obj, )
 };
+let arrayLike = {
+    0: "Hello",
+    1: "World",
+    length: 2
+};
+
+let array = Array.from(arrayLike)
+
+function sayHallo(hallo, world) {
+    return hallo + " " + world;
+}
+
+/* console.log(function() {
+    for (let i = 0; i < array.length; i++) {
+        return array.pop()
+    }
+}); */
+
 //Перевірка:
-function makeBusy(el) {
-    console.log(this.name + ' must do ' + el);
-};
-
-let user = { name: "John" };
-
-let tasks = ["cleaning", "homework", "exercise"];
-
-console.log(`function apply`);
-apply(makeBusy, user, tasks);
 
 //Bind
 function bind(f, context) {
@@ -54,11 +65,11 @@ function swowFirstName() {
     console.log(`First name of user is ${this.firstName}`);
 }
 
-console.log(`
-function bind`);
+/* console.log(`
+function bind`); */
 
 let bindedF = bind(swowFirstName, someUser);
-bindedF();
+//bindedF();
 
 //Перевірка з setTimeout:
 let admin = {
@@ -68,10 +79,10 @@ showAdmin() {
 }
 };
 
-console.log(`
-function bind with setTimeout`);
+/* console.log(`
+function bind with setTimeout`); */
 let showAdminBindedF = bind(admin.showAdmin, admin);
 
-showAdminBindedF();
+//showAdminBindedF();
 
-setTimeout(showAdminBindedF, 2000);
+//setTimeout(showAdminBindedF, 2000);
